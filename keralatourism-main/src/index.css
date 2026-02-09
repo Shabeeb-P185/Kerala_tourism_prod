@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Kerala Tourism Design System - Inspired by Kerala's natural beauty */
+
+@layer base {
+  :root {
+    /* Background & Foreground */
+    --background: 40 33% 98%;
+    --foreground: 160 30% 15%;
+
+    /* Cards & Popovers */
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 15%;
+
+    /* Primary - Deep Emerald (Kerala Backwaters) */
+    --primary: 160 45% 25%;
+    --primary-foreground: 40 33% 98%;
+
+    /* Secondary - Warm Gold (Temple Architecture) */
+    --secondary: 38 80% 55%;
+    --secondary-foreground: 160 30% 15%;
+
+    /* Muted - Soft sage */
+    --muted: 150 15% 90%;
+    --muted-foreground: 160 15% 45%;
+
+    /* Accent - Tropical Teal */
+    --accent: 175 50% 40%;
+    --accent-foreground: 40 33% 98%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 150 15% 85%;
+    --input: 150 15% 85%;
+    --ring: 160 45% 25%;
+
+    --radius: 0.75rem;
+
+    /* Custom Kerala Theme Colors */
+    --kerala-emerald: 160 45% 25%;
+    --kerala-gold: 38 80% 55%;
+    --kerala-sand: 40 33% 95%;
+    --kerala-water: 185 60% 45%;
+    --kerala-forest: 140 40% 30%;
+    --kerala-sunset: 15 80% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(160 45% 20%) 0%, hsl(175 50% 30%) 50%, hsl(185 60% 35%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 80% 50%) 0%, hsl(30 85% 55%) 100%);
+    --gradient-nature: linear-gradient(180deg, hsl(160 45% 25% / 0.9) 0%, hsl(140 40% 30% / 0.7) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(160 30% 15% / 0.1);
+    --shadow-elevated: 0 8px 30px -8px hsl(160 30% 15% / 0.15);
+    --shadow-gold: 0 4px 20px -4px hsl(38 80% 55% / 0.3);
+
+    /* Sidebar */
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 160 30% 15%;
+    --sidebar-primary: 160 45% 25%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 150 15% 90%;
+    --sidebar-accent-foreground: 160 30% 15%;
+    --sidebar-border: 150 15% 85%;
+    --sidebar-ring: 160 45% 25%;
+  }
+
+  .dark {
+    --background: 160 30% 8%;
+    --foreground: 40 33% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 40 33% 95%;
+    --popover: 160 25% 12%;
+    --popover-foreground: 40 33% 95%;
+
+    --primary: 160 45% 45%;
+    --primary-foreground: 160 30% 8%;
+
+    --secondary: 38 70% 50%;
+    --secondary-foreground: 160 30% 8%;
+
+    --muted: 160 20% 18%;
+    --muted-foreground: 150 15% 60%;
+
+    --accent: 175 50% 45%;
+    --accent-foreground: 160 30% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 20%;
+    --input: 160 20% 20%;
+    --ring: 160 45% 45%;
+
+    --sidebar-background: 160 25% 10%;
+    --sidebar-foreground: 40 33% 95%;
+    --sidebar-primary: 160 45% 45%;
+    --sidebar-primary-foreground: 160 30% 8%;
+    --sidebar-accent: 160 20% 18%;
+    --sidebar-accent-foreground: 40 33% 95%;
+    --sidebar-border: 160 20% 20%;
+    --sidebar-ring: 160 45% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .gold-gradient {
+    background: var(--gradient-gold);
+  }
+
+  .nature-overlay {
+    background: var(--gradient-nature);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+
+  .text-gradient {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/80 border border-white/20;
+  }
+
+  .kerala-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
